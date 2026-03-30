@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "push": "git add . && git commit -m \"Site Update\" && git push"
   },
   "dependencies": {
     "next": "16.2.1",

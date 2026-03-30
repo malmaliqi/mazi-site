@@ -69,7 +69,6 @@ export default function Home() {
         <div className="max-w-[900px] mx-auto animate-fade-in relative z-10 text-center">
           <p className="text-sm md:text-base tracking-[6px] uppercase text-[var(--color-blood-red)] mb-10 font-bold">WELCOME TO THE DARK ENTRIES</p>
           <p className="text-sm md:text-2xl text-[#aaa] leading-[2.5] md:leading-[2.2] font-light tracking-widest uppercase italic shadow-sm">
-            MA&apos;ZI IS POST MUSIC
           </p>
         </div>
       </section>

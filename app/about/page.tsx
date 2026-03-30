@@ -3,14 +3,14 @@ import GraffitiMural from '@/components/GraffitiMural';
 
 export default function About() {
   return (
-    <div className="bg-[var(--color-bg-black)] min-h-screen py-32 px-6 md:px-20 relative overflow-hidden">
+    <div className="bg-[var(--color-bg-black)] min-h-screen pt-24 pb-32 px-6 md:px-20 relative overflow-hidden">
       <GraffitiMural />
       <div className="max-w-[900px] mx-auto relative z-10">
-        <p className="text-sm md:text-base tracking-[6px] uppercase text-[var(--color-blood-red)] mb-16 font-bold">The Collective</p>
+        <p className="text-sm md:text-base tracking-[6px] uppercase text-[var(--color-blood-red)] mb-8 font-bold">The Collective</p>
 
-        <h2 className="text-4xl md:text-5xl font-black text-[var(--color-text-white)] mb-12 leading-tight tracking-wide">MA&apos;ZI</h2>
+        <h2 className="text-4xl md:text-5xl font-black text-[var(--color-text-white)] mb-8 leading-tight tracking-wide">MA&apos;ZI</h2>
 
-        <div className="text-[#aaa] text-base md:text-lg leading-[2.2] space-y-6 mb-32 font-light">
+        <div className="text-[#aaa] text-base md:text-lg leading-[2.2] space-y-6 mb-24 font-light">
           <p>
             <strong className="text-[var(--color-text-white)] font-medium">MA&apos;ZI </strong> is a collective of four people that is founded by Grey Lenses (Zjarr Bujari &amp; Ndricon Hoxha) and Mal Maliqi in the beginning of 2024 while creating the iconic album "Erdhen Vampirat", then joined by Yoda.<br />
             Characterized by a different vision, MA'ZI music is experimental, alternative, noise, cinematic, post-punk, dark-wave, trap, and vamp. MA'ZI is <strong className="text-[var(--color-blood-red)] font-medium">Post-Music</strong>. All of this is combined in a very energetic or moody vibe, where every ominous sound is a controlled demolition that give literal chills to the listener, creating a one-of-a-kind experience.<br />

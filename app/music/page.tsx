@@ -5,9 +5,9 @@ import GraffitiMural from '@/components/GraffitiMural';
 export default function Music() {
   const artists = [
     { name: "MA'ZI", desc: 'Collective Discography', img: '/MAZI_logo.png', spotify: 'https://open.spotify.com/album/7wzgVJd7m3SnAbQLo5BDvJ', loreId: '' },
-    { name: 'Mal Maliqi', desc: 'Vampire Lord.', img: '/Mal Maliqi 3.jpg', spotify: 'https://open.spotify.com/artist/4ht1vzpljKHD3CBdOUqcvP', yt: 'https://www.youtube.com/channel/UCyuplbr7W9ig_v0Mx7fBDeQ', loreId: 'bio-mal' },
+    { name: 'Mal Maliqi', desc: 'Rapper / Producer.', img: '/Mal Maliqi 3.jpg', spotify: 'https://open.spotify.com/artist/4ht1vzpljKHD3CBdOUqcvP', yt: 'https://www.youtube.com/channel/UCyuplbr7W9ig_v0Mx7fBDeQ', loreId: 'bio-mal' },
     { name: 'Grey Lenses', desc: 'Alternative, Post-Punk, Dark-Wave, Noise & Cinematic Rock band.', img: '/grey lenses 3.png', spotify: 'https://open.spotify.com/artist/3ZON6Xp7bZcAimcZEsdxGd', yt: 'https://www.youtube.com/@greylenses128', loreId: 'bio-grey' },
-    { name: 'Yoda', desc: 'Yoda The Plug', img: '/Yoda.jpg', spotify: 'https://open.spotify.com/artist/62DUugY7Slewx8iMfk6LqI', yt: 'https://www.youtube.com/@vetyoda', loreId: 'bio-yoda' }
+    { name: 'Yoda', desc: 'Rapper / Producer / Beatmaker', img: '/Yoda.jpg', spotify: 'https://open.spotify.com/artist/62DUugY7Slewx8iMfk6LqI', yt: 'https://www.youtube.com/@vetyoda', loreId: 'bio-yoda' }
   ];
 
   return (
