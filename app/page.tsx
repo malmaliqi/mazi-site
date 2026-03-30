@@ -27,7 +27,7 @@ export default function Home() {
   ];
 
   return (
-    <>
+    <div className="animate-entrance">
       {/* ══════ HERO SECTION ══════ */}
       <section className="relative min-h-[100vh] flex flex-col items-center justify-center text-center bg-[var(--color-bg-black)] bg-[radial-gradient(circle_at_center,_#150505_0%,_var(--color-bg-black)_60%)] px-5 -mt-[80px] overflow-hidden">
         {/* Graffiti mural background — covers the entire hero */}
@@ -74,7 +74,8 @@ export default function Home() {
       </section>
 
       {/* ══════ MA'ZI MUSIC ══════ */}
-      <section className="relative py-16 px-6 md:px-20 bg-[var(--color-bg-black)] border-t border-[#0a0a0a] overflow-hidden">
+      {/* ══════ MA'ZI MUSIC ══════ */}
+      <section className="relative py-32 px-6 md:px-20 bg-[var(--color-bg-black)] border-t border-[#0a0a0a] overflow-hidden">
         <div className="absolute inset-0 flex flex-col justify-end items-center pointer-events-none select-none overflow-hidden leading-[3] opacity-[0.15]" aria-hidden="true">
           {muralLines.slice(0, 8).map((line, i) => (
             <p key={i} className={`whitespace-nowrap ${line.size} ${line.color} ${line.offset} tracking-[5px] font-medium lowercase italic`}>
@@ -130,11 +131,16 @@ export default function Home() {
             </button>
           </form>
 
-          <div className="text-center space-y-3">
-
+          <div className="max-w-[400px] mx-auto text-center relative z-10 pt-20">
+            <p className="text-sm md:text-base tracking-[6px] uppercase text-[var(--color-blood-red)] mb-12 font-black italic">The Hub</p>
+            <div className="h-px bg-white/5 w-full mb-12"></div>
+            <p className="text-[#999] text-sm md:text-[14px] leading-relaxed tracking-[4px] uppercase font-light italic mb-16">
+              MA&apos;ZI COLLECTIVE. © 2024. EVERY OMINOUS SOUND IS A CONTROLLED DEMOLITION.
+            </p>
+            <div className="pb-32"></div>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

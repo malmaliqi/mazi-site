@@ -118,7 +118,7 @@ export default function Store() {
   }, []);
 
   return (
-    <div className="bg-[var(--color-bg-black)] min-h-screen py-16 px-6 md:px-20 relative overflow-hidden">
+    <div className="bg-[var(--color-bg-black)] min-h-screen py-32 px-6 md:px-20 relative overflow-hidden animate-entrance">
       <GraffitiMural />
       <div className="max-w-[1200px] mx-auto relative z-10">
         <div className="mb-12 md:mb-16 text-center">
@@ -279,11 +279,11 @@ export default function Store() {
 
           {/* Container - Vertical Stack on Mobile, Two-Column on Desktop */}
           <div
-            className="w-full max-w-[1200px] flex flex-col md:flex-row items-center md:items-start justify-center relative z-[105] px-6 text-center md:text-left"
+            className="w-full max-w-[1200px] flex flex-col md:flex-row items-center md:items-start justify-center relative z-[105] px-6 text-center md:text-left pt-12 md:pt-0"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Product Image Column */}
-            <div className="relative w-full aspect-square md:w-[500px] lg:w-[600px] md:h-[500px] lg:h-[600px] mb-8 md:mb-0 bg-black flex-shrink-0">
+            {/* Product Image Column - Top on Mobile, Left on Desktop */}
+            <div className="relative w-full aspect-square md:w-[500px] lg:w-[600px] md:h-[500px] lg:h-[600px] mb-8 md:mb-0 bg-black flex-shrink-0 order-1">
               <Image
                 src={showBackInLightbox && storeItems[lightboxIndex].backImg ? storeItems[lightboxIndex].backImg! : storeItems[lightboxIndex].img}
                 alt="Store Product" fill className="object-contain p-4 md:p-8 animate-fade-in"
@@ -304,8 +304,8 @@ export default function Store() {
               </button>
             </div>
 
-            {/* Product Info Column - Centered on mobile, Left-aligned on Desktop */}
-            <div className="w-full md:max-w-[450px] flex flex-col items-center md:items-start md:pl-16">
+            {/* Product Info Column - Bottom on Mobile, Right on Desktop */}
+            <div className="w-full md:max-w-[450px] flex flex-col items-center md:items-start md:pl-16 order-2">
               {!storeItems[lightboxIndex].inStock && (
                 <span className="text-[10px] font-black border border-[var(--color-blood-red)] text-[var(--color-blood-red)] tracking-[4px] uppercase px-4 py-1 mb-4">PRE-ORDER</span>
               )}
@@ -341,7 +341,7 @@ export default function Store() {
 
               {/* Description (Scrollable on small mobile) */}
               <div className="mb-12">
-                <p className="text-[11px] md:text-xs text-[#666] leading-relaxed tracking-[2px] uppercase font-medium max-w-sm">
+                <p className="text-[11px] md:text-xs text-[#888] leading-relaxed tracking-[2px] uppercase font-medium max-w-sm">
                   {storeItems[lightboxIndex].description}
                 </p>
               </div>
@@ -368,9 +368,9 @@ export default function Store() {
                             }}
                             className={`text-[10px] w-12 h-12 flex items-center justify-center border transition-all duration-500 ${isSelected
                               ? 'bg-white text-black border-white font-black'
-                              : isXL
+                               : isXL
                                 ? 'border-[#1a1a1a] text-[#444] hover:border-white hover:text-white'
-                                : 'border-[#080808] text-[#1a1a1a] cursor-not-allowed'
+                                : 'border-[#1a1a1a] text-[#333] cursor-not-allowed'
                               }`}
                           >
                             {size}

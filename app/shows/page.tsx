@@ -74,7 +74,7 @@ export default function Shows() {
 
 
   return (
-    <div className="bg-[var(--color-bg-black)] min-h-screen py-32 px-6 md:px-20 relative overflow-hidden">
+    <div className="bg-[var(--color-bg-black)] min-h-screen py-32 px-6 md:px-20 relative overflow-hidden animate-entrance">
       <GraffitiMural />
       <div className="max-w-[900px] mx-auto relative z-10">
         <p className="text-xs md:text-base tracking-[4px] md:tracking-[6px] uppercase text-[var(--color-blood-red)] mb-12 md:mb-20 font-bold">LIVE SHOWS</p>

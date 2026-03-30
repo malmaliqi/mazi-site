@@ -121,6 +121,15 @@
   animation: fadeInSlow 1.2s ease-out both;
 }
 
+.animate-entrance {
+  animation: fadeInSlow 1s ease-out both, slideInFromBottom 0.8s ease-out both;
+}
+
+@keyframes slideInFromBottom {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
 .animate-breathe {
   animation: breathe 6s ease-in-out infinite;
 }

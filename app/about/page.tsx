@@ -3,7 +3,7 @@ import GraffitiMural from '@/components/GraffitiMural';
 
 export default function About() {
   return (
-    <div className="bg-[var(--color-bg-black)] min-h-screen pt-24 pb-32 px-6 md:px-20 relative overflow-hidden">
+    <div className="bg-[var(--color-bg-black)] min-h-screen pt-24 pb-48 px-6 md:px-20 relative overflow-hidden animate-entrance">
       <GraffitiMural />
       <div className="max-w-[900px] mx-auto relative z-10">
         <p className="text-sm md:text-base tracking-[6px] uppercase text-[var(--color-blood-red)] mb-8 font-bold">The Collective</p>
@@ -83,12 +83,26 @@ export default function About() {
                 </div>
               </div>
               <p className="text-[#777] text-sm leading-[2.2] font-light italic pl-6 border-l border-[#1a1a1a]">
-                [Grey Lenses&apos; full biography will go here...]
-              </p>
-              <div className="flex gap-8 mt-8 pl-6">
-                <a href="https://open.spotify.com/artist/3ZON6Xp7bZcAimcZEsdxGd" target="_blank" rel="noreferrer" className="text-xs tracking-[3px] uppercase text-[#888] hover:text-[var(--color-blood-red)] transition-colors duration-700 border-b border-[#333] pb-1">Spotify</a>
-                <a href="https://www.youtube.com/@greylenses128" target="_blank" rel="noreferrer" className="text-xs tracking-[3px] uppercase text-[#888] hover:text-[var(--color-blood-red)] transition-colors duration-700 border-b border-[#333] pb-1">YouTube</a>
-              </div>
+                Grey Lenses is a band formed in March 2021 by Zjarr Bujari, Ndriçon Hoxha, and Drin Hoxha. From the outset, the band entered recording sessions that would later result in their debut EP Hint, released in December 2021. Their first single, Operation Downfall, was released on June 16, 2021.
+                <p>
+                  In September 2021, Grey Lenses began full-band rehearsals and made their live debut one month later. Over time, both the band’s formation and sound evolved significantly. Former members include Drin Hoxha, Jon Raçi, and Albin Abazi, with Zjarr Bujari and Ndriçon Hoxha remaining at the core of the project, joined by Dr. Bekim Hoxha as the band’s drum machine.
+                </p>
+                <p>
+                  Drawing from post-punk, dark wave, noise, and no wave influences, Grey Lenses has continuously shaped a distinct and evolving sonic identity. After nearly two years of work, the band released their LP Calm Sun in September 2023, followed by the EP Infinite Resignation in December 2023. On January 11, 2025, they released their latest EP, Breeze.
+                </p>
+                <p>
+                  Beyond their own releases, Grey Lenses has also been involved in collaborative and independent production work. Together with Mal Maliqi, the band co-founded the independent label Ma’Zi, under which Mali’s album Erdhën Vampirat was released on September 5, 2024. Members of Grey Lenses contributed directly to the recording, production, mixing, and mastering of the album, marking an important collaborative milestone and expanding the band’s role beyond their own discography.
+                </p>
+                <p>
+                  Grey Lenses operates as a fully independent and self-sustained project, with all recording, production, mixing, and mastering handled internally by the band.
+                </p>
+                <p>
+                  Currently, the band is actively recording and developing new material, with both an EP and a full-length album in progress.
+                </p>
+                <div className="flex gap-8 mt-8 pl-6">
+                  <a href="https://open.spotify.com/artist/3ZON6Xp7bZcAimcZEsdxGd" target="_blank" rel="noreferrer" className="text-xs tracking-[3px] uppercase text-[#888] hover:text-[var(--color-blood-red)] transition-colors duration-700 border-b border-[#333] pb-1">Spotify</a>
+                  <a href="https://www.youtube.com/@greylenses128" target="_blank" rel="noreferrer" className="text-xs tracking-[3px] uppercase text-[#888] hover:text-[var(--color-blood-red)] transition-colors duration-700 border-b border-[#333] pb-1">YouTube</a>
+                </div>
             </section>
 
             {/* Yoda */}

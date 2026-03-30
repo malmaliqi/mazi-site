@@ -83,16 +83,23 @@ export default function Navbar() {
           className="fixed inset-0 z-[45] bg-black/95 backdrop-blur-md md:hidden flex flex-col items-center justify-center gap-10"
           style={{ animation: 'fadeInSlow 0.4s ease-out' }}
         >
-          {navLinks.map((link) => (
-            <Link 
-              key={link.name}
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className="text-2xl font-black uppercase tracking-[5px] text-[#999] hover:text-[var(--color-blood-red)] transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link 
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className={`text-2xl font-black uppercase tracking-[5px] transition-colors ${
+                  isActive 
+                    ? 'text-[var(--color-blood-red)]' 
+                    : 'text-[#999] hover:text-[var(--color-blood-red)]'
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </div>
       )}
     </>

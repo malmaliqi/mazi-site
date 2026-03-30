@@ -11,7 +11,7 @@ export default function Music() {
   ];
 
   return (
-    <div className="bg-[var(--color-bg-black)] min-h-screen py-32 px-6 md:px-20 relative overflow-hidden">
+    <div className="bg-[var(--color-bg-black)] min-h-screen py-32 px-6 md:px-12 animate-entrance relative overflow-hidden">
       <GraffitiMural />
       <div className="max-w-[1200px] mx-auto relative z-10">
         <p className="text-sm md:text-base tracking-[6px] uppercase text-[var(--color-blood-red)] mb-20 font-bold">MA&apos;ZI Music</p>
