@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-black: #050505;
+  --color-dark-grey: #1a1a1a;
+  --color-blood-red: #8a0303;
+  --color-text-white: #f0f0f0;
+  --color-accent-red: #b00b0b;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg-black);
+    color: var(--color-text-white);
+  }
+}
