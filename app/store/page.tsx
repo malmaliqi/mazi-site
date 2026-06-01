@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useCart } from '@/components/CartProvider';
 import GraffitiMural from '@/components/GraffitiMural';
+import Magnetic from '@/components/Magnetic';
 
 type StoreItem = { type: string; img: string; backImg?: string; name: string; color: string; price: string; description: string; inStock: boolean };
 
@@ -193,77 +194,6 @@ export default function Store() {
             })}
           </div>
         </div>
-
-        {/* ══════ MUSIC (CD / VINYL) ══════ */}
-        <div>
-          <p className="text-sm md:text-base tracking-[4px] uppercase text-[var(--color-blood-red)] mb-10 font-bold border-b border-[var(--color-blood-red)] pb-2 inline-block">MA&apos;ZI Music — CD / Vinyl</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-            {storeItems.slice(4).map((item, localI) => {
-              const i = localI + 4;
-              return (
-                <div key={`store-item-${i}`} className="group">
-                  <div
-                    className="w-full aspect-square relative mb-5 cursor-pointer"
-                    onClick={() => openLightbox(i)}
-                  >
-                    {!item.inStock && (
-                      <div className="absolute top-4 left-0 bg-[var(--color-blood-red)] text-white text-[8px] font-black tracking-[3px] uppercase px-3 py-1 z-40">PRE-ORDER</div>
-                    )}
-                    {item.color?.includes('VINYL') ? (
-                      <div className="w-full h-full rounded-full bg-[#0a0a0a] border-[4px] border-[#040404] shadow-[0_15px_35px_rgba(0,0,0,0.9)] relative flex items-center justify-center overflow-hidden group-hover:shadow-[0_15px_35px_rgba(138,3,3,0.15)] transition-shadow duration-700">
-                        <div className="absolute inset-[6%] rounded-full border border-[#161616] pointer-events-none"></div>
-                        <div className="absolute inset-[14%] rounded-full border border-[#111] pointer-events-none"></div>
-                        <div className="absolute inset-[24%] rounded-full border border-[#1a1a1a] pointer-events-none opacity-50"></div>
-                        <div className="absolute inset-[32%] rounded-full border border-[#111] pointer-events-none"></div>
-                        <div className="relative w-[38%] h-[38%] rounded-full overflow-hidden z-10 shadow-[0_0_10px_rgba(0,0,0,0.8)] bg-black group-hover:scale-105 transition-transform duration-500">
-                          <Image src={item.img} alt={item.name} fill className={`object-cover ${item.backImg ? 'opacity-100 group-hover:opacity-0' : ''} transition-all duration-500 z-10`} />
-                          {item.backImg && (
-                            <Image src={item.backImg} alt={`${item.name} Back`} fill className="object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0 z-20" />
-                          )}
-                        </div>
-                        <div className="absolute w-[4%] h-[4%] bg-[var(--color-bg-black)] rounded-full z-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-[#000]"></div>
-                      </div>
-                    ) : item.color?.includes('CD') ? (
-                      <div className="w-full h-full rounded-full bg-gradient-to-br from-[#1a1a1a] via-[#111] to-[#0a0a0a] p-[2px] relative flex items-center justify-center shadow-[0_15px_35px_rgba(0,0,0,0.9)] group-hover:shadow-[0_15px_35px_rgba(138,3,3,0.1)] transition-shadow duration-700">
-                        <div className="w-full h-full rounded-full relative overflow-hidden bg-black">
-                          <Image src={item.img} alt={item.name} fill className={`object-cover ${item.backImg ? 'opacity-100 group-hover:opacity-0' : ''} group-hover:scale-[1.03] transition-all duration-500 z-10`} />
-                          {item.backImg && (
-                            <Image src={item.backImg} alt={`${item.name} Back`} fill className="object-cover opacity-0 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-500 absolute inset-0 z-20" />
-                          )}
-                          <div className="absolute w-[20%] h-[20%] bg-[var(--color-bg-black)] rounded-full z-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-[3px] border-[#1a1a1a] flex items-center justify-center">
-                            <div className="w-[30%] h-[30%] rounded-full bg-transparent border border-[#111]"></div>
-                          </div>
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="w-full h-full overflow-hidden relative">
-                        <Image src={item.img} alt={item.name} fill className="object-cover hover-distort" />
-                      </div>
-                    )}
-                  </div>
-                  <p className="text-sm text-[var(--color-text-white)] font-light mb-1 tracking-tight">
-                    {item.name}
-                    <span className="text-white/70 ml-2 text-sm font-normal tracking-[3px] uppercase">{item.color}</span>
-                  </p>
-                  <p className="text-[var(--color-blood-red)] text-sm font-bold mb-4">{item.price}</p>
-                  <div className="flex items-center gap-4">
-                    <div className="flex items-center gap-2">
-                      <button onClick={() => updateQuantity(i, -1)} className="text-[#666] hover:text-[var(--color-text-white)] transition-colors text-sm cursor-pointer bg-transparent">&minus;</button>
-                      <span className="text-[var(--color-text-white)] text-sm w-5 text-center">{quantities[i]}</span>
-                      <button onClick={() => updateQuantity(i, 1)} className="text-[#666] hover:text-[var(--color-text-white)] transition-colors text-sm cursor-pointer bg-transparent">&#43;</button>
-                    </div>
-                    <button
-                      onClick={() => handleAddToCart(i)}
-                      className="text-xs tracking-[3px] uppercase text-[var(--color-blood-red)] border border-[var(--color-blood-red)] px-4 py-2 hover:bg-[var(--color-blood-red)] hover:text-white transition-all duration-500 bg-transparent cursor-pointer font-bold"
-                    >
-                      {item.inStock ? 'Add to Cart' : 'Pre-order'}
-                    </button>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
       </div>
 
       {/* ══════ LIGHTBOX with XO Store Premium Aesthetic ══════ */}
@@ -288,7 +218,7 @@ export default function Store() {
                 src={showBackInLightbox && storeItems[lightboxIndex].backImg ? storeItems[lightboxIndex].backImg! : storeItems[lightboxIndex].img}
                 alt="Store Product" fill className="object-contain p-4 md:p-8 animate-fade-in"
               />
-              
+
               {/* Internal navigation arrows (Desktop Only) */}
               <button
                 onClick={(e) => { e.stopPropagation(); navigateLightbox(-1); }}
@@ -331,12 +261,14 @@ export default function Store() {
                   <span className="text-white text-sm w-10 text-center font-bold tracking-tighter">{quantities[lightboxIndex]}</span>
                   <button onClick={() => updateQuantity(lightboxIndex, 1)} className="text-[#666] hover:text-white transition-colors text-lg cursor-pointer bg-transparent px-2">&#43;</button>
                 </div>
-                <button
-                  onClick={() => handleAddToCart(lightboxIndex)}
-                  className="flex-1 text-[10px] md:text-xs tracking-[4px] uppercase text-white border border-white hover:bg-white hover:text-black transition-all font-black"
-                >
-                  {storeItems[lightboxIndex].inStock ? 'Add to Cart' : 'Pre-order'}
-                </button>
+                <Magnetic strength={0.2} className="flex-1 ms-4 mt-2">
+                  <button
+                    onClick={() => handleAddToCart(lightboxIndex)}
+                    className="w-full text-[10px] md:text-xs tracking-[4px] uppercase text-white border border-white hover:bg-white hover:text-black hover:scale-[1.05] transition-all duration-300 font-black h-12"
+                  >
+                    {storeItems[lightboxIndex].inStock ? 'Add to Cart' : 'Pre-order'}
+                  </button>
+                </Magnetic>
               </div>
 
               {/* Description (Scrollable on small mobile) */}
@@ -356,25 +288,26 @@ export default function Store() {
                         const isXL = size === 'XL';
                         const isSelected = selectedSizes[lightboxIndex] === size;
                         return (
-                          <button
-                            key={size}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              if (isXL) setSelectedSizes(prev => {
-                                const next = [...prev];
-                                next[lightboxIndex] = size;
-                                return next;
-                              });
-                            }}
-                            className={`text-[10px] w-12 h-12 flex items-center justify-center border transition-all duration-500 ${isSelected
-                              ? 'bg-white text-black border-white font-black'
-                               : isXL
-                                ? 'border-[#1a1a1a] text-[#444] hover:border-white hover:text-white'
-                                : 'border-[#1a1a1a] text-[#333] cursor-not-allowed'
-                              }`}
-                          >
-                            {size}
-                          </button>
+                          <Magnetic key={size} strength={0.4}>
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                if (isXL) setSelectedSizes(prev => {
+                                  const next = [...prev];
+                                  next[lightboxIndex] = size;
+                                  return next;
+                                });
+                              }}
+                              className={`text-[10px] w-12 h-12 flex items-center justify-center border transition-all duration-500 hover:scale-110 ${isSelected
+                                ? 'bg-white text-black border-white font-black'
+                                : isXL
+                                  ? 'border-[#1a1a1a] text-[#444] hover:border-white hover:text-white'
+                                  : 'border-[#1a1a1a] text-[#333] cursor-not-allowed'
+                                }`}
+                            >
+                              {size}
+                            </button>
+                          </Magnetic>
                         );
                       })}
                     </div>

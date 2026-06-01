@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useCart } from '@/components/CartProvider';
 import { useState } from 'react';
+import Magnetic from '@/components/Magnetic';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -33,17 +34,20 @@ export default function Navbar() {
             const isActive = pathname === link.href;
             return (
               <li key={link.name}>
-                <Link 
-                  href={link.href} 
-                  className={`uppercase text-xs tracking-[3px] transition-all duration-300 ${
-                    isActive 
-                      ? 'text-[var(--color-blood-red)] font-black' 
-                      : 'text-[#999] font-bold hover:text-[var(--color-blood-red)]'
-                  }`}
-                >
-                  {link.name}
-                </Link>
+                <Magnetic strength={0.1}>
+                  <Link 
+                    href={link.href} 
+                    className={`uppercase text-xs tracking-[3px] transition-all duration-300 block py-2 ${
+                      isActive 
+                        ? 'text-[var(--color-blood-red)] font-black' 
+                        : 'text-[#999] font-bold hover:text-[var(--color-blood-red)]'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                </Magnetic>
               </li>
+
             );
           })}
           {cartCount > 0 && (
@@ -80,7 +84,7 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       {isOpen && (
         <div 
-          className="fixed inset-0 z-[45] bg-black/95 backdrop-blur-md md:hidden flex flex-col items-center justify-center gap-10"
+          className="fixed inset-0 z-[45] bg-black/98 backdrop-blur-xl md:hidden flex flex-col items-center justify-center gap-10"
           style={{ animation: 'fadeInSlow 0.4s ease-out' }}
         >
           {navLinks.map((link) => {

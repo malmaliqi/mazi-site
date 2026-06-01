@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Magnetic from '@/components/Magnetic';
 
 export default function Home() {
   /* Graffiti mural lines — varying sizes, colors, opacities to create a full-wall painted texture */
@@ -39,11 +40,11 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Main title — EXACT original Montserrat font-black */}
-        <h1 className="text-[4rem] sm:text-[6rem] md:text-[12rem] font-black leading-none tracking-[-2px] md:tracking-[-6px] uppercase m-0 text-[var(--color-text-white)] pt-20 z-10 animate-flicker">
+        {/* Main title — FLUID SCALING (TOKYO STANDARD) */}
+        <h1 className="text-[clamp(4rem,12vw,12rem)] font-black leading-none tracking-[clamp(-2px,-0.5vw,-6px)] uppercase m-0 text-[var(--color-text-white)] pt-20 z-10 animate-flicker">
           MA&apos;ZI
         </h1>
-        <h2 className="text-lg sm:text-xl md:text-2xl my-5 font-normal tracking-[8px] sm:tracking-[10px] md:tracking-[15px] lowercase text-[var(--color-blood-red)] z-10">
+        <h2 className="text-[clamp(1.125rem,2vw,1.5rem)] my-5 font-normal tracking-[clamp(8px,1vw,15px)] lowercase text-[var(--color-blood-red)] z-10">
           collective
         </h2>
         <p className="text-lg md:text-xl text-[#888] mb-8 uppercase tracking-[3px] z-10">
@@ -91,11 +92,15 @@ export default function Home() {
               <Image src="/MAZI_logo.png" alt="MA&apos;ZI" fill className="object-cover" />
             </Link>
             <div className="text-center md:text-left">
-              <h3 className="text-3xl md:text-5xl font-black text-[var(--color-text-white)] mb-6 tracking-wide uppercase">MA&apos;ZI</h3>
-              <p className="text-sm tracking-[3px] uppercase text-[#999] mb-8">Collective Discography</p>
+              <h3 className="text-[clamp(1.875rem,4vw,3rem)] font-black text-[var(--color-text-white)] mb-6 tracking-wide uppercase">MA&apos;ZI</h3>
+              <p className="text-[clamp(0.875rem,1vw,1rem)] tracking-[3px] uppercase text-[#999] mb-8">Collective Discography</p>
               <div className="flex justify-center md:justify-start gap-6 items-center">
-                <a href="https://open.spotify.com/album/7wzgVJd7m3SnAbQLo5BDvJ" target="_blank" rel="noreferrer" className="text-xs tracking-[3px] uppercase text-[var(--color-blood-red)] hover:text-[var(--color-accent-red)] transition-colors duration-700 border-b border-[var(--color-blood-red)] pb-1 font-bold">Spotify</a>
-                <Link href="/music" className="text-xs tracking-[3px] uppercase text-[var(--color-blood-red)] hover:text-[var(--color-accent-red)] transition-colors duration-700 border-b border-[var(--color-blood-red)] pb-1 font-bold">Discover All</Link>
+                <Magnetic strength={0.3}>
+                  <a href="https://open.spotify.com/album/7wzgVJd7m3SnAbQLo5BDvJ" target="_blank" rel="noreferrer" className="text-xs tracking-[3px] uppercase text-[var(--color-blood-red)] hover:text-[var(--color-accent-red)] transition-colors duration-700 border-b border-[var(--color-blood-red)] pb-1 font-bold">Spotify</a>
+                </Magnetic>
+                <Magnetic strength={0.3}>
+                  <Link href="/music" className="text-xs tracking-[3px] uppercase text-[var(--color-blood-red)] hover:text-[var(--color-accent-red)] transition-colors duration-700 border-b border-[var(--color-blood-red)] pb-1 font-bold">Discover All</Link>
+                </Magnetic>
               </div>
             </div>
           </div>
@@ -103,7 +108,7 @@ export default function Home() {
       </section>
 
       {/* ══════ CONTACT ══════ */}
-      <section id="contact" className="relative bg-[var(--color-bg-black)] py-16 px-6 border-t border-[#0a0a0a] scroll-mt-20 overflow-hidden">
+      <section id="contact" className="relative bg-[var(--color-bg-black)] pt-16 pb-8 px-6 border-t border-[#0a0a0a] scroll-mt-20 overflow-hidden">
         <div className="absolute inset-0 flex flex-col justify-center items-center pointer-events-none select-none overflow-hidden leading-[4] opacity-[0.12]" aria-hidden="true">
           {muralLines.slice(7, 17).map((line, i) => (
             <p key={i} className={`whitespace-nowrap ${line.size} ${line.color} ${line.offset} tracking-[5px] font-medium lowercase italic`}>
@@ -117,7 +122,7 @@ export default function Home() {
           <form
             action="https://api.web3forms.com/submit"
             method="POST"
-            className="flex flex-col gap-6 mb-16"
+            className="flex flex-col gap-6 mb-10"
           >
             <input type="hidden" name="access_key" value="f47cbcfe-ce4b-4e59-8e76-0fdae2ea318c" />
             <input type="hidden" name="subject" value="🧛 New MA'ZI Portal Message" />
@@ -126,18 +131,19 @@ export default function Home() {
             <input type="text" name="name" placeholder="Name" required className="w-full px-0 py-4 bg-transparent border-b border-[#444] text-[var(--color-text-white)] text-sm tracking-wider focus:outline-none focus:border-[var(--color-blood-red)] transition-colors placeholder:text-[#888] placeholder:text-sm placeholder:tracking-[3px] placeholder:uppercase" />
             <input type="email" name="email" placeholder="Email" required className="w-full px-0 py-4 bg-transparent border-b border-[#444] text-[var(--color-text-white)] text-sm tracking-wider focus:outline-none focus:border-[var(--color-blood-red)] transition-colors placeholder:text-[#888] placeholder:text-sm placeholder:tracking-[3px] placeholder:uppercase" />
             <textarea name="message" rows={4} placeholder="Message" required className="w-full px-0 py-4 bg-transparent border-b border-[#444] text-[var(--color-text-white)] text-sm tracking-wider focus:outline-none focus:border-[var(--color-blood-red)] transition-colors resize-none placeholder:text-[#888] placeholder:text-sm placeholder:tracking-[3px] placeholder:uppercase"></textarea>
-            <button type="submit" className="self-start text-sm tracking-[3px] uppercase text-[#ccc] border-b border-[#666] pb-1 hover:text-[var(--color-blood-red)] hover:border-[var(--color-blood-red)] transition-all duration-700 mt-4 bg-transparent cursor-pointer">
-              Send
-            </button>
+            <Magnetic strength={0.4} className="self-start mt-4">
+              <button type="submit" className="text-sm tracking-[3px] uppercase text-[#ccc] border-b border-[#666] pb-1 hover:text-[var(--color-blood-red)] hover:border-[var(--color-blood-red)] transition-all duration-700 bg-transparent cursor-pointer">
+                Send
+              </button>
+            </Magnetic>
           </form>
 
-          <div className="max-w-[400px] mx-auto text-center relative z-10 pt-20">
-            <p className="text-sm md:text-base tracking-[6px] uppercase text-[var(--color-blood-red)] mb-12 font-black italic">The Hub</p>
-            <div className="h-px bg-white/5 w-full mb-12"></div>
-            <p className="text-[#999] text-sm md:text-[14px] leading-relaxed tracking-[4px] uppercase font-light italic mb-16">
-              MA&apos;ZI COLLECTIVE. © 2024. EVERY OMINOUS SOUND IS A CONTROLLED DEMOLITION.
+          <div className="max-w-[400px] mx-auto text-center relative z-10 pt-10">
+            <div className="h-px bg-white/5 w-full mb-6"></div>
+            <p className="text-[#999] text-sm md:text-[14px] leading-relaxed tracking-[4px] uppercase font-light italic mb-10">
+              EVERY OMINOUS SOUND IS A CONTROLLED DEMOLITION.
             </p>
-            <div className="pb-32"></div>
+            <div className="pb-4"></div>
           </div>
         </div>
       </section>

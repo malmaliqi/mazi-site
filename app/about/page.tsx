@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import GraffitiMural from '@/components/GraffitiMural';
+import Magnetic from '@/components/Magnetic';
 
 export default function About() {
   return (
@@ -8,7 +9,7 @@ export default function About() {
       <div className="max-w-[900px] mx-auto relative z-10">
         <p className="text-sm md:text-base tracking-[6px] uppercase text-[var(--color-blood-red)] mb-8 font-bold">The Collective</p>
 
-        <h2 className="text-4xl md:text-5xl font-black text-[var(--color-text-white)] mb-8 leading-tight tracking-wide">MA&apos;ZI</h2>
+        <h2 className="text-[clamp(2.5rem,6vw,4.5rem)] font-black text-[var(--color-text-white)] mb-8 leading-tight tracking-wide">MA&apos;ZI</h2>
 
         <div className="text-[#aaa] text-base md:text-lg leading-[2.2] space-y-6 mb-24 font-light">
           <p>
@@ -31,7 +32,7 @@ export default function About() {
                   <Image src="/Mal Maliqi 3.jpg" alt="Mal Maliqi" fill className="object-cover hover-distort" />
                 </div>
                 <div>
-                  <h3 className="text-3xl md:text-4xl font-black text-[var(--color-text-white)] mb-2 md:border-l-2 md:border-[var(--color-blood-red)] md:pl-6 uppercase italic">
+                  <h3 className="text-[clamp(1.875rem,4vw,2.5rem)] font-black text-[var(--color-text-white)] mb-2 md:border-l-2 md:border-[var(--color-blood-red)] md:pl-6 uppercase italic leading-none">
                     Mal Maliqi
                   </h3>
                   <p className="text-xs md:text-sm tracking-[2px] md:tracking-[3px] uppercase text-[var(--color-blood-red)] md:pl-6">Rapper &amp; Producer</p>
@@ -64,8 +65,12 @@ export default function About() {
                 </p>
               </div>
               <div className="flex justify-center md:justify-start gap-8 mt-8 md:pl-6 leading-none">
-                <a href="https://open.spotify.com/artist/4ht1vzpljKHD3CBdOUqcvP" target="_blank" rel="noreferrer" className="text-[10px] md:text-xs tracking-[2px] md:tracking-[3px] uppercase text-[#888] hover:text-[var(--color-blood-red)] transition-colors duration-700 border-b border-[#333] pb-1">Spotify</a>
-                <a href="https://www.youtube.com/channel/UCyuplbr7W9ig_v0Mx7fBDeQ" target="_blank" rel="noreferrer" className="text-[10px] md:text-xs tracking-[2px] md:tracking-[3px] uppercase text-[#888] hover:text-[var(--color-blood-red)] transition-colors duration-700 border-b border-[#333] pb-1">YouTube</a>
+                <Magnetic strength={0.3}>
+                  <a href="https://open.spotify.com/artist/4ht1vzpljKHD3CBdOUqcvP" target="_blank" rel="noreferrer" className="text-[10px] md:text-xs tracking-[2px] md:tracking-[3px] uppercase text-[#888] hover:text-[var(--color-blood-red)] transition-colors duration-700 border-b border-[#333] pb-1 font-bold">Spotify</a>
+                </Magnetic>
+                <Magnetic strength={0.3}>
+                  <a href="https://www.youtube.com/channel/UCyuplbr7W9ig_v0Mx7fBDeQ" target="_blank" rel="noreferrer" className="text-[10px] md:text-xs tracking-[2px] md:tracking-[3px] uppercase text-[#888] hover:text-[var(--color-blood-red)] transition-colors duration-700 border-b border-[#333] pb-1 font-bold">YouTube</a>
+                </Magnetic>
               </div>
             </section>
 
@@ -76,14 +81,16 @@ export default function About() {
                   <Image src="/grey lenses 3.png" alt="Grey Lenses" fill className="object-cover hover-distort" />
                 </div>
                 <div>
-                  <h3 className="text-3xl md:text-4xl font-black text-[var(--color-text-white)] mb-2 md:border-l-2 md:border-[var(--color-blood-red)] md:pl-6 uppercase italic">
+                  <h3 className="text-[clamp(1.875rem,4vw,2.5rem)] font-black text-[var(--color-text-white)] mb-2 md:border-l-2 md:border-[var(--color-blood-red)] md:pl-6 uppercase italic leading-none">
                     Grey Lenses
                   </h3>
                   <p className="text-xs md:text-sm tracking-[2px] md:tracking-[3px] uppercase text-[var(--color-blood-red)] md:pl-6">Producer, Beatmaker, Singer</p>
                 </div>
               </div>
-              <p className="text-[#777] text-sm leading-[2.2] font-light italic pl-6 border-l border-[#1a1a1a]">
-                Grey Lenses is a band formed in March 2021 by Zjarr Bujari, Ndriçon Hoxha, and Drin Hoxha. From the outset, the band entered recording sessions that would later result in their debut EP Hint, released in December 2021. Their first single, Operation Downfall, was released on June 16, 2021.
+              <div className="text-[#999] text-sm md:text-base leading-[2.2] space-y-5 font-light pl-6 border-l border-[#1a1a1a]">
+                <p>
+                  Grey Lenses is a band formed in March 2021 by Zjarr Bujari, Ndriçon Hoxha, and Drin Hoxha. From the outset, the band entered recording sessions that would later result in their debut EP Hint, released in December 2021. Their first single, Operation Downfall, was released on June 16, 2021.
+                </p>
                 <p>
                   In September 2021, Grey Lenses began full-band rehearsals and made their live debut one month later. Over time, both the band’s formation and sound evolved significantly. Former members include Drin Hoxha, Jon Raçi, and Albin Abazi, with Zjarr Bujari and Ndriçon Hoxha remaining at the core of the project, joined by Dr. Bekim Hoxha as the band’s drum machine.
                 </p>
@@ -99,10 +106,15 @@ export default function About() {
                 <p>
                   Currently, the band is actively recording and developing new material, with both an EP and a full-length album in progress.
                 </p>
-                <div className="flex gap-8 mt-8 pl-6">
-                  <a href="https://open.spotify.com/artist/3ZON6Xp7bZcAimcZEsdxGd" target="_blank" rel="noreferrer" className="text-xs tracking-[3px] uppercase text-[#888] hover:text-[var(--color-blood-red)] transition-colors duration-700 border-b border-[#333] pb-1">Spotify</a>
-                  <a href="https://www.youtube.com/@greylenses128" target="_blank" rel="noreferrer" className="text-xs tracking-[3px] uppercase text-[#888] hover:text-[var(--color-blood-red)] transition-colors duration-700 border-b border-[#333] pb-1">YouTube</a>
+                <div className="flex justify-center md:justify-start gap-8 mt-8 pl-0 md:pl-6">
+                  <Magnetic strength={0.3}>
+                    <a href="https://open.spotify.com/artist/3ZON6Xp7bZcAimcZEsdxGd" target="_blank" rel="noreferrer" className="text-[10px] md:text-xs tracking-[2px] md:tracking-[3px] uppercase text-[#888] hover:text-[var(--color-blood-red)] transition-colors duration-700 border-b border-[#333] pb-1 font-bold">Spotify</a>
+                  </Magnetic>
+                  <Magnetic strength={0.3}>
+                    <a href="https://www.youtube.com/@greylenses128" target="_blank" rel="noreferrer" className="text-[10px] md:text-xs tracking-[2px] md:tracking-[3px] uppercase text-[#888] hover:text-[var(--color-blood-red)] transition-colors duration-700 border-b border-[#333] pb-1 font-bold">YouTube</a>
+                  </Magnetic>
                 </div>
+              </div>
             </section>
 
             {/* Yoda */}
@@ -112,18 +124,24 @@ export default function About() {
                   <Image src="/Yoda.jpg" alt="Yoda" fill className="object-cover hover-distort" />
                 </div>
                 <div>
-                  <h3 className="text-3xl md:text-4xl font-black text-[var(--color-text-white)] mb-2 md:border-l-2 md:border-[var(--color-blood-red)] md:pl-6 uppercase italic">
+                  <h3 className="text-[clamp(1.875rem,4vw,2.5rem)] font-black text-[var(--color-text-white)] mb-2 md:border-l-2 md:border-[var(--color-blood-red)] md:pl-6 uppercase italic leading-none">
                     Yoda
                   </h3>
                   <p className="text-xs md:text-sm tracking-[2px] md:tracking-[3px] uppercase text-[var(--color-blood-red)] md:pl-6">Rapper, Producer, Beatmaker</p>
                 </div>
               </div>
-              <p className="text-[#777] text-sm leading-[2.2] font-light italic pl-6 border-l border-[#1a1a1a]">
-                [Yoda&apos;s full biography will go here...]
-              </p>
-              <div className="flex gap-8 mt-8 pl-6">
-                <a href="https://open.spotify.com/artist/62DUugY7Slewx8iMfk6LqI" target="_blank" rel="noreferrer" className="text-xs tracking-[3px] uppercase text-[#888] hover:text-[var(--color-blood-red)] transition-colors duration-700 border-b border-[#333] pb-1">Spotify</a>
-                <a href="https://www.youtube.com/@vetyoda" target="_blank" rel="noreferrer" className="text-xs tracking-[3px] uppercase text-[#888] hover:text-[var(--color-blood-red)] transition-colors duration-700 border-b border-[#333] pb-1">YouTube</a>
+              <div className="text-[#999] text-sm md:text-base leading-[2.2] space-y-5 font-light pl-6 border-l border-[#1a1a1a]">
+                <p>
+                  [Yoda&apos;s full biography will go here...]
+                </p>
+              </div>
+              <div className="flex justify-center md:justify-start gap-8 mt-8 pl-0 md:pl-6">
+                <Magnetic strength={0.3}>
+                  <a href="https://open.spotify.com/artist/62DUugY7Slewx8iMfk6LqI" target="_blank" rel="noreferrer" className="text-[10px] md:text-xs tracking-[2px] md:tracking-[3px] uppercase text-[#888] hover:text-[var(--color-blood-red)] transition-colors duration-700 border-b border-[#333] pb-1 font-bold">Spotify</a>
+                </Magnetic>
+                <Magnetic strength={0.3}>
+                  <a href="https://www.youtube.com/@vetyoda" target="_blank" rel="noreferrer" className="text-[10px] md:text-xs tracking-[2px] md:tracking-[3px] uppercase text-[#888] hover:text-[var(--color-blood-red)] transition-colors duration-700 border-b border-[#333] pb-1 font-bold">YouTube</a>
+                </Magnetic>
               </div>
             </section>
           </div>

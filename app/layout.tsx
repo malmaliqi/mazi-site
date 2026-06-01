@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Cursor from "@/components/Cursor";
 import { CartProvider } from "@/components/CartProvider";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "700", "900"] });
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body className={`${montserrat.className} antialiased`}>
         {/* Persistent film grain noise overlay */}
         <div className="noise-overlay" aria-hidden="true"></div>
+        <Cursor />
         <CartProvider>
           <Navbar />
           <main className="pt-[80px] min-h-screen">
